@@ -31,8 +31,8 @@ $conn->close();
 <title>Core PHP Demo</title>
 </head>
 
-<body style="background: url();">
-Hello World!
+<body style="background: url(https://s3-eu-west-1.amazonaws.com/clientshare-docs/company_logo/949638008.png); color:red;">
+    Hello World!
 </body>
 
 </html>
