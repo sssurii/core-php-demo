@@ -1,5 +1,7 @@
 <?php
-    $conn = pg_connect("host=ec2-54-217-214-201.eu-west-1.compute.amazonaws.com dbname=d8rg9krv4umqqm user=amdaovxrrzdnus password=9771ce3b5913a52b9da9e1db877e057c449ebcccf94134c0cecb2ece0f51d070 port=5432");
+    //$conn = pg_connect("host=ec2-54-217-214-201.eu-west-1.compute.amazonaws.com dbname=d8rg9krv4umqqm user=amdaovxrrzdnus password=9771ce3b5913a52b9da9e1db877e057c449ebcccf94134c0cecb2ece0f51d070 port=5432");
+    $conn = pg_connect("host=ec2-54-217-250-0.eu-west-1.compute.amazonaws.com
+ dbname=df0nfcuo9qv7p7 user=nkkcieenykgcdx password=d9d937829675d251c89805f9d940817b03107f351ba1da84515082fb41e705fb port=5432");
 
     if($conn) {
        echo 'connected';
