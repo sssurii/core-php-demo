@@ -1,5 +1,9 @@
 <?php
     require_once('header.php');
+    
+    use \Rollbar\Rollbar;
+    use \Rollbar\Payload\Level;
+
     $host = getenv('DB_HOST')? getenv('DB_HOST') : 'localhost';
     $dbname = getenv('DB_NAME')? getenv('DB_NAME') :'test_db';
     $user = getenv('DB_USER')? getenv('DB_USER') :'postgres';
@@ -9,8 +13,7 @@
     $conn = pg_connect("host=".$host." dbname=".$dbname." user=".$user." password=".$password." port=".$port);
     
     if(!$conn) {
-        Rollbar::log(Level::info(), 'Test info message');
-        throw new Exception('Test exception');
+        Rollbar::log(Level::info(), 'There has been an error connecting');
         echo 'There has been an error connecting';
         die;
     }
