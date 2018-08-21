@@ -13,7 +13,7 @@
     $conn = pg_connect("host=".$host." dbname=".$dbname." user=".$user." password=".$password." port=".$port);
     
     if(!$conn) {
-        Rollbar::log(Level::info(), 'There has been an error connecting');
+        Rollbar::log(Level::error(), 'There has been an error connecting');
         echo 'There has been an error connecting';
         die;
     }
