@@ -6,9 +6,11 @@ use Dotenv\Dotenv;
 use \Rollbar\Rollbar;
 use \Rollbar\Payload\Level;
 
-//load env variables
-$dotenv = new Dotenv(__DIR__);
-$dotenv->load();
+if(getenv('ENVIROMENT') !== 'staging')
+    //load env variables
+    $dotenv = new Dotenv(__DIR__);
+    $dotenv->load();
+)
 
 Rollbar::init(
     array(
