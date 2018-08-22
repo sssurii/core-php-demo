@@ -1,5 +1,6 @@
 {
     "require": {
-        "rollbar/rollbar": "~1.5"
+        "rollbar/rollbar": "~1.5",
+        "mailgun/mailgun-php": "^2.6"
     }
 }
