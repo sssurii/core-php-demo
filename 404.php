@@ -3,7 +3,7 @@
 use \Rollbar\Rollbar;
 use \Rollbar\Payload\Level;
 
-Rollbar::log(Level::error(), 'Page Not Found : '$_SERVER['REQUEST_URI'].'');
+Rollbar::log(Level::error(), 'Page Not Found : '.$_SERVER['REQUEST_URI'].'');
 ?>
 <!DOCTYPE html>
 <html>
