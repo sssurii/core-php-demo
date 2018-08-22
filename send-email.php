@@ -1,6 +1,7 @@
 <?php
 
 require('vendor/autoload.php');
+include_once('header.php');
 
 use Mailgun\Mailgun;
 

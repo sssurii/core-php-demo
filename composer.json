@@ -1,6 +1,9 @@
 {
     "require": {
         "rollbar/rollbar": "~1.5",
-        "mailgun/mailgun-php": "^2.6"
+        "mailgun/mailgun-php": "^2.6",
+        "vlucas/phpdotenv": "^2.5",
+        "php-http/curl-client": "^1.7",
+        "guzzlehttp/psr7": "^1.4"
     }
 }
