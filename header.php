@@ -18,3 +18,6 @@ Rollbar::init(
         'environment' => 'development'
     )
 );
+
+$redis = new Predis\Client(getenv('REDIS_URL'));
+$redis->set('welcome-msg', 'Welcome to Core PHP Demo');

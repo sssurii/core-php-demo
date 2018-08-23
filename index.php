@@ -7,7 +7,7 @@
 </head>
 
 <body style="background: url(https://s3-eu-west-1.amazonaws.com/clientshare-docs/company_logo/949638008.png); color:red;">
-    <h1>Welcome to Core PHP Demo</h1>
+    <h1><?php echo $redis->get('welcome-msg'); ?></h1>
     <a href="/add.php" title="Add record">Add some records</a>
 </body>
 
