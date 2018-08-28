@@ -1,12 +1,12 @@
 <?php
 
-require('vendor/autoload.php');
+require 'vendor/autoload.php';
 
 use Dotenv\Dotenv;
 use \Rollbar\Rollbar;
 use \Rollbar\Payload\Level;
 
-if(getenv('ENVIROMENT') !== 'staging'){
+if(getenv('ENVIROMENT') !== 'staging') {
     //load env variables
     $dotenv = new Dotenv(__DIR__);
     $dotenv->load();

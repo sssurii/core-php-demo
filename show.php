@@ -1,10 +1,8 @@
 <?php
-    include_once('header.php');
-    require_once('connection.php'); 
-    $select =  pg_query($conn, "Select * from test_data");
-
-    $data = pg_fetch_all($select);
-
+require_once 'header.php';
+require_once 'connection.php'; 
+$select =  pg_query($conn, "Select * from test_data");
+$data = pg_fetch_all($select);
 ?>
 
 
@@ -17,7 +15,7 @@
 
 <body >
     <?php 
-    if(!empty($data)){ ?>
+    if(!empty($data)) { ?>
         <h2> Records Table </h2>
         <table border="1">
             <thead>
@@ -50,16 +48,15 @@
                             <?php echo $row['created_at']; ?>
                         </th>
                     </tr>  
-               <?php } ?>
+                <?php } ?>
             </tbody>
         </table>
-      <?php 
-    echo '<a href="/add.php" title="Add record">Add record </a>';
+        <?php 
+        echo '<a href="/add.php" title="Add record">Add record </a>';
     }
     else {
         echo 'No Record found! <a href="/add.php" title="Add record"> Add record </a>';
     } 
     ?>
 </body>
-
 </html>

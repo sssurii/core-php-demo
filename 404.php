@@ -1,4 +1,4 @@
-<?php require_once('header.php');
+<?php require_once 'header.php';
 
 use \Rollbar\Rollbar;
 use \Rollbar\Payload\Level;
