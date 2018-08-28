@@ -17,7 +17,8 @@ $email_data = [
 ];
 // Now, compose and send your message.
 // $mg->messages()->send($domain, $params);
-if(getenv('SEND_EMAIL') === true) {
+
+if(getenv('SEND_EMAIL') == true) {
     $result = $mg->messages()->send(getenv('MAILGUN_DOMAIN'), $email_data);
 }
 
