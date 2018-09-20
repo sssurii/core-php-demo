@@ -14,43 +14,49 @@ Hello API Event Received
 <p>
 Hello this is test page for Hellosign API
 </p>
+<button class="sign-document" id = "sign_document"> Sign now</button>
 
 <p>
 The number of lines in a paragraph depends on the size of the browser window. 
 If you resize the browser window, the number of lines in this paragraph will change.
 </p>
 <script crossorigin src="https://unpkg.com/hellosign-embedded@1/umd/embedded.development.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 <script type="text/javascript">
-    console.log('hello');
-    const hellosign = window.HelloSign;
-    const CLIENT_ID = '0123456789abcdef0123456789abcdef';
-    hellosign.init(CLIENT_ID);
-    console.log(hellosign);
-    var options = {
-    test_mode : 1,
-    clientId : CLIENT_ID,
-    subject : 'My First embedded signature request',
-    message : 'Awesome, right?',
-    signers : [
-                {
-                    email_address : 'surindersingh@ucreate.co.in',
-                    name : 'Surinder'
-                }
-            ],
-            files : ['sample-executive.pdf']
-        };
 
-    //var output = hellosign.signatureRequest.createEmbedded(options);
-    var output = hellosign.signatureRequest.createEmbedded(options)
-    .then(function(response){
-        console.log(response);
-    })
-    .catch(function(err){
-        console.log(err);
+    $('#sign_document').on('click', function(){
+        $.ajax({
+               //url:'http://localhost:8000/get_sign_url',
+               url:'http://localhost/core-php-demo/signed-url.php',
+               type:'POST',
+               data:{'filename':'Hello file name', 'email':'surindersingh@gmail.com', 'name':'Surinder singh'},
+               success:function(response){
+                    console.log(response.sign_url);
+                    sign_url = response.sign_url
+                    openSignFrame(sign_url);
+               },
+               error:function(xhr, status, error){
+                    console.log(status);
+               },
+               complete:function(){
+                console.log('request complete');
+               }
+
+            });
     });
 
-    console.log(output);
-
+    function openSignFrame(sign_url){
+        HelloSign.init("17aa539b6a8f89b38d7b59a0ccfa41ba");
+        HelloSign.open({
+            url: sign_url,
+            uxVersion: 2,
+            allowCancel: true,
+            skipDomainVerification:true,
+            messageListener: function(eventData) {
+                // do something
+            }
+        });
+    }
 </script>
 </body>
 </html>
