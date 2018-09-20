@@ -26,8 +26,8 @@ If you resize the browser window, the number of lines in this paragraph will cha
 
     $('#sign_document').on('click', function(){
         $.ajax({
-               //url:'http://localhost:8000/get_sign_url',
-               url:'http://localhost/core-php-demo/signed-url.php',
+               //http://localhost/core-php-demo/signed-url.php',
+               url:'/signed-url.php',
                type:'POST',
                data:{'filename':'Hello file name', 'email':'surindersingh@gmail.com', 'name':'Surinder singh'},
                success:function(response){
