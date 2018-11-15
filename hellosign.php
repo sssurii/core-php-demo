@@ -23,7 +23,7 @@ If you resize the browser window, the number of lines in this paragraph will cha
 <script crossorigin src="https://unpkg.com/hellosign-embedded@1/umd/embedded.development.js"></script>
 <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 <script type="text/javascript">
-
+  
     $('#sign_document').on('click', function(){
         $.ajax({
                //http://localhost/core-php-demo/signed-url.php',
@@ -46,7 +46,7 @@ If you resize the browser window, the number of lines in this paragraph will cha
     });
 
     function openSignFrame(sign_url){
-        HelloSign.init("17aa539b6a8f89b38d7b59a0ccfa41ba");
+        HelloSign.init("<?php echo getenv('HELLOSIGN_CLIENT_ID'); ?>");
         HelloSign.open({
             url: sign_url,
             uxVersion: 2,
